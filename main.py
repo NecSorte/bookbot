@@ -1,9 +1,10 @@
-import re
 from stats import count_words, lower_character, sort_letters, print_dictionary_list
+
+import sys
 
 
 def main():
-    path = "books/frankenstein.txt"
+    path = sys.argv[1]
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path}...")
     text = get_book_text(path)
