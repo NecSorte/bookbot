@@ -1,15 +1,22 @@
-from stats import count_words, lower_character
+import re
+from stats import count_words, lower_character, sort_letters, print_dictionary_list
+
 
 def main():
     path = "books/frankenstein.txt"
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {path}...")
     text = get_book_text(path)
+    print("----------- Word Count ----------")
     count_words(text)
+    print("--------- Character Count -------")
     lowers = lower_character(text)
-    print(lowers)
+    sorted_chars = sort_letters(lowers)
+    print_dictionary_list(sorted_chars)
+
 
 def get_book_text(path):
     with open(path) as f:
         return f.read()
     
-
 main()
